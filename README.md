@@ -52,6 +52,10 @@ codex mcp add scobe --url http://127.0.0.1:29980/mcp
 - The bridge talks only to the Scobe app on your computer at `http://127.0.0.1:29980/mcp`. It makes no other network requests and sends no data anywhere else.
 - When Scobe is closed, the bridge reads the tool list Scobe saved at `~/.scobe/mcp-cache.json` and answers tool calls with "Scobe is not open".
 
+## Privacy
+
+See the [privacy policy](PRIVACY.md). In short: the plugin reads from the Scobe app only when your agent calls a tool, stores nothing about you, and sends nothing off your computer.
+
 ## License
 
 MIT
