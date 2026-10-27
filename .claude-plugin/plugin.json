@@ -1,6 +1,7 @@
 {
   "name": "scobe",
-  "version": "0.1.0",
+  "displayName": "Scobe",
+  "version": "0.1.1",
   "description": "Build on a canvas of live browsers and editable frames that Claude can read and write to.",
   "author": {
     "name": "Jesse Bishop"

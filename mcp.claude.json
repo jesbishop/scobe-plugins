@@ -2,7 +2,7 @@
   "mcpServers": {
     "scobe": {
       "command": "${HOME}/.scobe/bin/scobe",
-      "args": ["${HOME}/.scobe/bridge/scobe-mcp.cjs"],
+      "args": ["${CLAUDE_PLUGIN_ROOT}/server/scobe-mcp.cjs"],
       "env": { "ELECTRON_RUN_AS_NODE": "1" }
     }
   }

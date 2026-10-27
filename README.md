@@ -47,10 +47,10 @@ codex mcp add scobe --url http://127.0.0.1:29980/mcp
 
 ## What this plugin runs and connects to
 
-- The plugin starts one local MCP server: the `scobe` command at `~/.scobe/bin/scobe`, with the bridge script `~/.scobe/bridge/scobe-mcp.cjs`. The Scobe desktop app installs and updates both files each time it starts; the command runs Scobe's own bundled runtime, so nothing is downloaded when the plugin starts.
+- The plugin starts one local MCP server: the bridge script in this plugin, [`server/scobe-mcp.cjs`](server/scobe-mcp.cjs), a short, dependency-free Node script you can read in full.
+- Claude Code runs it with the `scobe` command at `~/.scobe/bin/scobe`, which the Scobe desktop app installs each time it starts. That command is Scobe's own bundled runtime in Node mode, so nothing is downloaded or installed when the plugin starts.
 - The bridge talks only to the Scobe app on your computer at `http://127.0.0.1:29980/mcp`. It makes no other network requests and sends no data anywhere else.
 - When Scobe is closed, the bridge reads the tool list Scobe saved at `~/.scobe/mcp-cache.json` and answers tool calls with "Scobe is not open".
-- The bridge's source is in the Scobe repository at [`resources/mcp/scobe-mcp.cjs`](https://github.com/jesbishop/scobe/blob/main/resources/mcp/scobe-mcp.cjs).
 
 ## License
 
