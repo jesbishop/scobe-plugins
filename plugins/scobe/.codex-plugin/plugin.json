@@ -1,6 +1,6 @@
 {
   "name": "scobe",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Build on a canvas of live browsers and editable frames that Codex can read and write to.",
   "author": {
     "name": "Jesse Bishop",
@@ -19,9 +19,10 @@
     "category": "Design",
     "capabilities": ["Read", "Write"],
     "websiteURL": "https://github.com/jesbishop/scobe",
+    "privacyPolicyURL": "https://github.com/jesbishop/scobe-plugins/blob/main/PRIVACY.md",
     "brandColor": "#111111",
-    "composerIcon": "./assets/logo.svg",
-    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
     "defaultPrompt": [
       "Build a landing page hero on the Scobe canvas with auto-layout",
       "Snapshot the sidebar from my open browser into editable layers in Scobe",

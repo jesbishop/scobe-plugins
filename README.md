@@ -41,6 +41,16 @@ On Claude Code versions before 2.1.275, add the marketplace first with `/plugin 
 
 ### Codex
 
+Add the Scobe marketplace:
+
+```sh
+codex plugin marketplace add jesbishop/scobe-plugins
+```
+
+Then open the Plugins Directory in Codex, choose the **Scobe** marketplace, and install **Scobe**. Codex connects to the Scobe app at `http://127.0.0.1:29980/mcp`, so keep Scobe open while Codex works.
+
+Without the plugin, you can add the server directly:
+
 ```sh
 codex mcp add scobe --url http://127.0.0.1:29980/mcp
 ```
