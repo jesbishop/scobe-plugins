@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "scobe",
-      "source": "./plugins/scobe",
+      "source": "./",
       "description": "Connect to the Scobe desktop app using its MCP server."
     }
   ]

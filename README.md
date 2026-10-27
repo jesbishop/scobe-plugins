@@ -1,43 +1,57 @@
-# Scobe agent plugins
+# Scobe
 
-Use Scobe with your coding agent. Install [Scobe](https://github.com/jesbishop/scobe/releases/latest), open it once, then add the plugin for your agent.
+Scobe is an infinite canvas of live browsers and editable frames. With this plugin your agent can build on the canvas while you watch: create frames with auto-layout, add text and shapes, style them, and snapshot any live web page into editable layers.
 
-## Cursor
+## Prerequisites
 
-```sh
-/add-plugin scobe
-```
+Install [Scobe](https://github.com/jesbishop/scobe/releases/latest) for Windows, macOS, or Linux and open it at least once. Keep the app open while your agent works.
 
-Until the Cursor Marketplace listing is live, use **Connect your agent → Cursor** inside Scobe, which adds the same server to `~/.cursor/mcp.json`.
+## Features
 
-## Claude Code
+- **Read the canvas**: List frames, layers, and live browsers, with their sizes and hierarchy.
+- **Write to the canvas**: Create artboards and auto-layout frames, add text, rectangles, and ellipses, then move, resize, restyle, rename, duplicate, or delete them.
+- **Snapshot live pages**: Pull any region of an open browser into the canvas as editable layers, not a flat screenshot.
+- **Drive browsers**: Open and navigate live browsers on the canvas and take screenshots of them.
 
-On Claude Code 2.1.275 or later, one command:
+## Examples
+
+**Prompt:** "Build a landing page hero on the Scobe canvas with auto-layout."
+
+Your agent checks the canvas, creates a frame with auto-layout, and adds a headline, subtext, and buttons. New layers shimmer on the canvas as they appear.
+
+**Prompt:** "Snapshot the sidebar from my open browser into editable layers in Scobe."
+
+Your agent finds the open browser, snapshots the sidebar, and places it beside the browser as layers you can restyle.
+
+## Install
+
+### Claude Code
 
 ```sh
 /plugin install scobe --marketplace jesbishop/scobe-plugins
 ```
 
-On older versions, **add the marketplace**
+On Claude Code versions before 2.1.275, add the marketplace first with `/plugin marketplace add jesbishop/scobe-plugins`, then run `/plugin install scobe@scobe`.
+
+### Cursor
 
 ```sh
-/plugin marketplace add jesbishop/scobe-plugins
+/add-plugin scobe
 ```
 
-**Install the plugin**
-
-```sh
-/plugin install scobe@scobe
-```
-
-## Codex
-
-Install **Scobe** from the Codex plugin directory once it's listed. Until then:
+### Codex
 
 ```sh
 codex mcp add scobe --url http://127.0.0.1:29980/mcp
 ```
 
-## How it connects
+## What this plugin runs and connects to
 
-Scobe installs a `scobe` command in `~/.scobe/bin` every time it starts. Cursor and Claude Code run that command; it relays your agent's requests to the open Scobe app. Codex connects to the app's MCP endpoint directly. Keep Scobe open while your agent works; if it's closed, tools reply with "Scobe is not open".
+- The plugin starts one local MCP server: the `scobe` command at `~/.scobe/bin/scobe`, with the bridge script `~/.scobe/bridge/scobe-mcp.cjs`. The Scobe desktop app installs and updates both files each time it starts; the command runs Scobe's own bundled runtime, so nothing is downloaded when the plugin starts.
+- The bridge talks only to the Scobe app on your computer at `http://127.0.0.1:29980/mcp`. It makes no other network requests and sends no data anywhere else.
+- When Scobe is closed, the bridge reads the tool list Scobe saved at `~/.scobe/mcp-cache.json` and answers tool calls with "Scobe is not open".
+- The bridge's source is in the Scobe repository at [`resources/mcp/scobe-mcp.cjs`](https://github.com/jesbishop/scobe/blob/main/resources/mcp/scobe-mcp.cjs).
+
+## License
+
+MIT
