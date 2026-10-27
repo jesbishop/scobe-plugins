@@ -4,6 +4,12 @@ Scobe is an infinite canvas of live browsers and editable frames. With this plug
 
 Install [Scobe](https://github.com/jesbishop/scobe/releases/latest) and open it at least once. Scobe sets up the `scobe` command the plugin uses; keep the app open while your agent works.
 
+**Install in Claude Code**
+
+```sh
+/plugin install scobe --marketplace jesbishop/scobe-plugins
+```
+
 **Features**
 
 - **Read the canvas**: List frames, layers, and live browsers, with sizes and hierarchy.

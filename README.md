@@ -12,7 +12,13 @@ Until the Cursor Marketplace listing is live, use **Connect your agent → Curso
 
 ## Claude Code
 
-**Add the marketplace**
+On Claude Code 2.1.275 or later, one command:
+
+```sh
+/plugin install scobe --marketplace jesbishop/scobe-plugins
+```
+
+On older versions, **add the marketplace**
 
 ```sh
 /plugin marketplace add jesbishop/scobe-plugins
